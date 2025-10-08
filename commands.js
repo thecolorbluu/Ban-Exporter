@@ -8,6 +8,7 @@ const commands = [
     data: new SlashCommandBuilder()
       .setName('create_json')
       .setDescription('Creates a ban JSON file out of the given list of user IDs')
+      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
       .addStringOption(option =>
         option
           .setName('user_ids')
@@ -63,7 +64,8 @@ const commands = [
   {
     data: new SlashCommandBuilder()
     .setName("export_bans")
-    .setDescription("Export the server's banlist as JSON"),
+    .setDescription("Export the server's banlist as JSON")
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction, client) {
       if (!interaction.guild) return interaction.reply("This command must be used in a server");
       const guild = interaction.guild
@@ -110,6 +112,7 @@ const commands = [
     data: new SlashCommandBuilder ()
       .setName("import_bans")
       .setDescription("Import ban JSON to automatically ban users in the server. Allows filtering.")
+      .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
       .addAttachmentOption(option => 
         option
           .setName("json_file")
