@@ -32,7 +32,7 @@ const commands = [
         uid = uid.trim();
         if (!uid) continue;
 
-        let resolved_username // empty because defined literally right below
+        let resolved_username
 
         try {
           resolved_username = (await interaction.guild.members.fetch(uid)).user.username
