@@ -1,6 +1,6 @@
 // stores commands and functionality
 
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const fs = require('fs');
 
 const commands = [
